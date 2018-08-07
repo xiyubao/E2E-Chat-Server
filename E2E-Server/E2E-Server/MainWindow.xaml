@@ -7,6 +7,47 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <ScrollViewer x:Name="ScrollViewer1" Grid.Row="1"  Grid.Column="2" Margin="0,0,0,0" VerticalScrollBarVisibility="Auto">
+            <TextBlock x:Name="textBlock1"  Margin="0,0,0,0" FontSize="13" TextWrapping="Wrap"  />
+        </ScrollViewer>
+        <TextBlock x:Name="textBlock2" Grid.Row="0" Grid.Column="2" Margin="0,0,0,0" Text="Console:" FontFamily="Times New Roman" FontSize="18"/>
+        <Button x:Name="button1" Content="Run Server" HorizontalAlignment="Left" Width="75" Click="Open_Server" Margin="0,0,0,1"/>
+        <Button x:Name="button2" Content="Connect DB" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="98,0,0,0" Grid.ColumnSpan="2" Click="Connect_Database"/>
+        <Ellipse x:Name="Ellipse1" Fill="Red"  Margin="8,0,0,0" Stroke="Black" Height="20" VerticalAlignment="Bottom" RenderTransformOrigin="3.176,0.506" HorizontalAlignment="Left" Width="20" Grid.Column="1"/>
+        <Ellipse x:Name="Ellipse2" Grid.Column="1" Fill="Red" Margin="72,0,0,0" Stroke="Black" Height="20" VerticalAlignment="Top" RenderTransformOrigin="3.176,0.506" HorizontalAlignment="Left" Width="20"/>
+        <Ellipse x:Name="Ellipse3" Grid.Column="1" Fill="Red" Margin="133,0,0,0" Stroke="Black" Height="20" VerticalAlignment="Top" RenderTransformOrigin="3.176,0.506" HorizontalAlignment="Left" Width="20"/>
+        <Ellipse x:Name="Ellipse4" Grid.Column="1" Fill="Red" Margin="193,0,0,0" Stroke="Black" Height="20" VerticalAlignment="Top" RenderTransformOrigin="3.176,0.506" HorizontalAlignment="Left" Width="20"/>
+     
+        <TextBox x:Name="textBox" Grid.Column="1"  HorizontalAlignment="Left" Height="18" Margin="33,0,0,0" TextWrapping="Wrap" Text="Server" VerticalAlignment="Top" Width="39" FontSize="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
+        <TextBox x:Name="textBox2" Grid.Column="1" HorizontalAlignment="Left" Height="18" Margin="92,0,0,0" TextWrapping="Wrap" Text="DB" VerticalAlignment="Top" Width="39" FontSize="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
+        <TextBox x:Name="textBox3" Grid.Column="1" HorizontalAlignment="Left" Height="18" Margin="153,0,0,0" TextWrapping="Wrap" Text="SDR" VerticalAlignment="Top" Width="39" FontSize="10" HorizontalContentAlignment="Center"  VerticalContentAlignment="Center" IsReadOnly="True"/>
+        <TextBox x:Name="textBox4" Grid.Column="1" HorizontalAlignment="Left" Height="18" Margin="213,0,0,0" TextWrapping="Wrap" Text="SDS" VerticalAlignment="Top" Width="39" FontSize="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
+
+
+        <Grid Margin="0,0,0,0.333" Grid.Row="1" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <!--   <MediaElement x:Name="Media1" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" MediaEnded="MediaElement_MediaEnded"/>
+            <MediaElement x:Name="Media2" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" MediaEnded="MediaElement_MediaEnded"/>
+            -->
+
+        </Grid>
+
+        <Grid Margin="0,0,0,0.333" Grid.Row="1" Grid.Column="1">
+
+        </Grid>
+
     </Grid>
 </Window>
