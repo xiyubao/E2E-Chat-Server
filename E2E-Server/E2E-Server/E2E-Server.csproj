@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{305A8027-BFFD-42D5-80DB-CBED168CFFB6}</ProjectGuid>
+    <ProjectGuid>{6E381027-1DFA-4262-91B5-3FE2F17D9C0F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>E2E_Server</RootNamespace>
