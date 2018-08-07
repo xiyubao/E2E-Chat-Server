@@ -82,10 +82,6 @@ namespace E2E_Server
             StartServer();
         }
 
-        private void Connect_Database(object sender, RoutedEventArgs e)
-        {
-
-        }
 
      
     }

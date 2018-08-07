@@ -15,7 +15,7 @@ namespace E2E_Server
         public static int Max_Online_Num = 5;
 
 
-        public enum Light_Type { Open, Send };
+        public enum Light_Type { Open,Data, Send };
         public enum Message_Type { Send };
     }
 }
