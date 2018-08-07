@@ -27,5 +27,20 @@ namespace E2E_Server
         {
             return DateTime.Now.ToString();
         }
+
+        public String Line()
+        {
+            System.Diagnostics.StackTrace st = new System.Diagnostics.StackTrace(1, true);
+            return st.GetFrame(0).GetFileLineNumber().ToString();
+        }
+
+        public void Function_Binding(Tcp tmp)
+        {
+            tmp.log += Log;
+            tmp.light += Light;
+            tmp.send += Send;
+            tmp.login += DatabaseLogin;
+            tmp.register += DatabaseRegister;
+        }
     }
 }

@@ -41,9 +41,7 @@ namespace E2E_Server
             for(int i=0;i< Para.Max_Online_Num; ++i)
             {
                 Tcp tmp = new Tcp();
-                tmp.log += Log;
-                tmp.light += Light;
-                tmp.send += Send;
+              
                 tmp.startServer(Para.ip, Para.port);
                 tcp.Add(tmp);
             }

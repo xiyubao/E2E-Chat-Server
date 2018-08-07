@@ -13,11 +13,10 @@ namespace E2E_Server
     {
         private MySqlConnection sqlconnection = null;
         private string serverip = "111.231.57.188";
-        private string database_name = "sensorverify";
+        private string database_name = "E2E";
         private string username = "victor";
         private string password = "250413";
-        private string table = "train_table";
-        private string validation_table = "validation_table";
+        private string table = "main";
 
         private void Connect_Database(object sender, RoutedEventArgs e)
         {
@@ -45,7 +44,7 @@ namespace E2E_Server
             }
         }
 
-        public MySqlConnection LoadSqlServer(String database, String username, String password)
+        public MySqlConnection LoadSqlServer(string database, string username, string password)
         {
 
             String connectionString = "server=" + serverip + ";user id=" + username + ";pwd=" + password + ";database=" + database;
@@ -61,6 +60,45 @@ namespace E2E_Server
                 Console.WriteLine("error in MysqlConnection");
             }
             return conn;
+        }
+
+        public bool DatabaseLogin(string username, string password)
+        {
+            string str = "select * from " + table + " where (true)";
+            //sql数据库
+
+            MySqlCommand command = new MySqlCommand(str, sqlconnection);
+            MySqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                int index = 0;
+                string user = reader[index++].ToString();
+                string pass = reader[index++].ToString();
+                if (user.Equals(username) && pass.Equals(password))
+                    return true;
+            }
+
+            return false;
+        }
+
+        public bool DatabaseRegister(string username, string password)
+        {
+            if (DatabaseLogin(username, password))
+            {
+                Log(Line());
+                return false;
+            }
+            string str = "insert into " + table + " values(" + username+ "," + password + ")";
+
+            if (sqlconnection == null)
+                return false;
+
+            MySqlCommand command = new MySqlCommand(str, sqlconnection);
+            command.CommandText = str;
+            command.ExecuteNonQuery();
+
+            return true;
         }
 
     }
